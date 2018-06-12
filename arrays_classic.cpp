@@ -9,6 +9,11 @@ void pass_by_pointer_only( int values[12] ) {
     values[0] = 1;
 }
 
+auto dangling_return_value() {
+    int local_values[6] = {0,1,2,3,4,5};
+    return local_values;
+}
+
 int main() {
     int values[6] = {};
 
@@ -30,8 +35,16 @@ int main() {
     int values2[6] = {};
     // values2 = values;
 
+    // can't return an array from a function, just returns a dangling pointer to the local array
+    auto values3 = dangling_return_value();
+
+    // comparison compares the pointer
+    bool equal = values == values2; // false pointers don't match
+    bool less = values < values2;   // technically undefined behavior I believe, but anyone's guess
+
     // out of bounds access, no diagnostic in most cases
     // note: msvc does issue a warning here at compile time
     // however as isn't known at compile time all bets are off
     values[7] = 0xdeadbeef;
 }
+
