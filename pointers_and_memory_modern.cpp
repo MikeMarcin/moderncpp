@@ -142,3 +142,27 @@ void share_ownership( std::shared_ptr<thing_t> store_this ) {}
 void store_without_ownership( std::shared_ptr<thing_t> x ) {
     std::weak_ptr<thing_t> store_this{ x };
 }
+
+
+//////////////////////////////////////////////////////////////////////////
+// SUMMARY
+//////////////////////////////////////////////////////////////////////////
+/*
+As we will see, an essential best practice for any reference-counted smart pointer type
+is to avoid copying it unless you really mean to add a new reference. This cannot be stressed enough.
+This directly addresses both of these costs and pushes their performance impact down into the noise 
+for most applications, and especially eliminates the second cost because 
+it is an antipattern to add and remove references in tight loops.
+-- Herb Sutter GOTW 91
+
+
+In late 2013 Facebook RocksDB changed from pass-by-value shared_ptr to pass-by-pointer/ref
+Queries per second improved 4x( 100k -> 400k ) in one benchmark
+https://github.com/facebook/rocksdb/commit/5b825d6964e26ec3b4bb6faa708ebb1787f1d7bd
+
+Write make_unique by default (or make_shared if you need ref count) instead of new / malloc delete / free.
+- Don't use owning raw *, new, or delete any more, except rarely inside the implementation details of low-level data structures.
+- Do use non - owning raw * and &, especially for parameters.
+- Don't copy/assign refcounted smart pointers, including pass-by-value or in loops, unless you really want the semantics they express: altering object lifetime.
+- Pin a non - local shared_ptr by making one copy at the top of the tree( pay for addref once ), then pass by raw pointer / reference
+*/
