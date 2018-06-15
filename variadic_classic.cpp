@@ -10,6 +10,7 @@ __forceinline int sum_all_the_ints( int n, ... ) {
     va_start( args, n );
     // sum all the inputs; we still rely on the caller to tell us how many there are
     for ( int i = 0; i < n; ++i ) {
+        // no type safety, the user better have passed us an int
         sum += va_arg( args, int ); 
     }
     // cleanup args

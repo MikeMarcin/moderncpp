@@ -17,3 +17,12 @@ add_executable(01_pointers_and_memory_modern 	pointers_and_memory_modern.cpp)
 
 add_executable(02_variadic_classic	variadic_classic.cpp)
 add_executable(02_variadic_modern 	variadic_modern.cpp)
+
+add_executable(03_typedef_classic	typedef_classic.cpp)
+add_executable(03_typedef_modern 	typedef_modern.cpp)
+
+add_executable(04_auto_classic		auto_classic.cpp)
+add_executable(04_auto_modern 		auto_modern.cpp)
+
+add_executable(05_functor_classic	functor_classic.cpp)
+add_executable(05_functor_modern 	functor_modern.cpp)
