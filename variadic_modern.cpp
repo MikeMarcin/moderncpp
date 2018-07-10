@@ -1,6 +1,11 @@
 #include <iostream>
 #include <array>
 
+
+//////////////////////////////////////////////////////////////////////////
+// Accumulate
+//////////////////////////////////////////////////////////////////////////
+
 template<typename... Args>
 constexpr inline int sum_all_the_ints( Args... args ) {
     // fold expression make working with variadic templates much easier
