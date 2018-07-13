@@ -24,5 +24,12 @@ add_executable(03_typedef_modern 	typedef_modern.cpp)
 add_executable(04_auto_classic		auto_classic.cpp)
 add_executable(04_auto_modern 		auto_modern.cpp)
 
-add_executable(05_functor_classic	functor_classic.cpp)
-add_executable(05_functor_modern 	functor_modern.cpp)
+add_executable(05_class_modern 		class_modern.cpp)
+
+add_executable(06_functor_classic	functor_classic.cpp)
+add_executable(06_functor_modern 	functor_modern.cpp)
+
+add_executable(07_parameter_classic	parameter_classic.cpp)
+add_executable(07_parameter_modern 	parameter_modern.cpp)
+
+add_executable(08_qualifiers_modern 	qualifiers_modern.cpp)
