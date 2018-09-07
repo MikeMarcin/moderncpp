@@ -53,7 +53,7 @@ public:
 	friend void swap(RegularWidget& lhs, RegularWidget& rhs)	{ lhs.swap(rhs); }
 private:
 	// Use variable initialization as a shorthand to initialize your variables across all constructors
-    // and often prevent needing to have explict constructor definitions at all
+    // and often prevent needing to have explicit constructor definitions at all
 	int ordinal = 0;
 };
 
