@@ -48,7 +48,7 @@ private:
 	int m_value;
 	std::vector<int> m_data;
 
-	std::mutex m_cached_mutex;
+	mutable std::mutex m_cached_mutex;
 	mutable int m_cached = -1;
 
 #ifdef BAD

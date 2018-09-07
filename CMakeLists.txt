@@ -34,3 +34,5 @@ add_executable(07_parameter_classic	parameter_classic.cpp)
 add_executable(07_parameter_modern 	parameter_modern.cpp)
 
 add_executable(08_qualifiers_modern 	qualifiers_modern.cpp)
+
+# todo error reporting (error codes, exceptions, outcome etc)
